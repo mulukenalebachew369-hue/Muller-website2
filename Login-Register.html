@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login-Register Page</title>
+    <style>
+      body{
+        margin: 0;
+        min-height: 100vh;
+        padding: 80px;
+        background-image: url("background2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .login-div{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: arial;
+        gap: 10px;
+       
+        width: 80%;
+        max-width: 400px;
+        margin: auto;
+        height: 750px;
+        background-color: rgba(45, 35, 28, 0.919);
+        border-radius: 30px;
+       
+
+      }
+      button{
+        width: 100%;
+      }
+      .register-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: arial;
+        gap: 10px;
+        background-color: lightslategray;
+        width: 80%;
+        max-width: 400px;
+ 
+        margin: auto;
+        height: 650px;
+        background-color: rgba(45, 35, 28, 0.919);
+        border-radius: 30px;
+
+        
+      }
+      .box,.password-box{
+        padding: 7px;
+        padding-left: 38px;
+        width: 70%;
+        color: white;
+        background-color: rgba(45, 35, 28, 0.919);
+        border-radius: 7px;
+        height: 28px;
+        border: 1px solid gray;
+        font-size: 18px;
+      }
+      
+      .box2{
+        padding: 7px;
+        width: 78%;
+        color: white;
+        background-color: rgba(45, 35, 28, 0.919);
+        border-radius: 7px;
+        height: 28px;
+        border: 1px solid gray;
+        font-size: 18px;
+      }
+
+       .email-div img{
+        width: 24px;
+        position: absolute;
+        left: 42px;
+      }
+       .email-div .eye-button{
+        width: 24px;
+        position: absolute;
+        
+        right: 80px;
+        top: 50%;
+        transform: translateY(-80%);
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        
+        width: 30px;
+        height: 30px;
+        padding: 0;
+       }
+       .email-div .eye-button img{
+        width: 20px;
+       }
+      .email-div{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      .box::placeholder {
+  padding-left: 0px;
+      }
+      .login-button{
+        width: 82%;
+        height: 40px;
+        color: white;
+        background-color: rgba(255, 166, 0, 0.638);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .register-button{
+        width: 85%;
+        height: 40px;
+        cursor: pointer;
+        color: white;
+        background-color: rgba(255, 166, 0, 0.638);
+        border: none;
+        border-radius: 5px
+      }
+      h1{
+        margin-top: 50px;
+        margin-bottom: 0px;
+        font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+      }
+      h4{
+        margin-top: 0;
+        font-family: 'Poppins', 'Montserrat', Arial, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255, 166, 0, 0.742);
+      }
+      h2{
+        margin-top: -2px;
+        margin-bottom: 0;
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: bold;
+      }
+      h5{
+        margin-top: 0;
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400;
+      }
+      h1,h2,h5{
+        color:lightgray;
+      }
+      .account{
+        color: white;
+      }
+      a{
+        color: rgba(255, 166, 0, 0.636);
+      }
+      .book-pic{
+        margin-bottom: -55px;
+      }
+      .remeber-forgot{
+        display: flex;
+        align-items: center;
+        gap: 70px;
+        font-size: 13px;
+        color: white;
+      }
+     
+      .login-options{
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: transparent;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-options img {
+          width: 34px;
+          height: 34px;
+      }
+      .login-options-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+      
+      }
+      .active{
+        display: none;
+      }
+     
+      
+    </style>
+  </head>
+  <body>
+    <div class="login-div">
+      <img class="book-pic" src="book-pic.png">
+        <h1>MULLER BOOKS</h1>
+        <h4>BOOKS THAT INSPIRE</h4>
+        <h2>Welcome Back</h2>
+        <h5>sign in to continue to Muller Books</h5>
+
+      <div class="email-div">
+        <img src="email-outline.svg">
+        <input class="box" type="email" placeholder="Email">
+     </div>
+        <div class="email-div">
+            <img src="lock-icon.webp">
+            <input class="password-box" type="password" placeholder="Password">
+            <button class="eye-button" onclick="togglePassword()"><img src="eye-password.svg"></button>
+        </div>
+        <div class="remeber-forgot">
+           <p><input type="checkbox"> Remember me</p>
+           <a href="">Forgot password?</a>
+        </div>
+         <button class="login-button">Sign In</button>
+           <p style="color: white;
+           margin-bottom: 5px;">or continue with</p>
+         <div class="login-options-div">
+              <button class="login-options"><img src="google-logo2.webp"></button>
+              <button class="login-options"><img src="facebook-logo.webp"></button>
+              <button class="login-options"><img src="apple-logo.png"></button>
+         </div>
+        
+        <p class="account">Don't have an account? <a style="cursor: pointer;" onclick="show()">Create Account</a></p>
+    </div>
+    <div class="register-div active">
+      <img class="book-pic" src="book-pic.png">
+        <h1>MULLER BOOKS</h1>
+        <h4>BOOKS THAT INSPIRE</h4>
+        <h2>Welcome!</h2>
+        <h5>sign up to continue to Muller Books</h5>
+       
+          <input class="box2" type="name" placeholder="First name">
+          <input class="box2" type="name" placeholder="Last name">
+       
+       <div class="email-div">
+        <img src="email-outline.svg">
+        <input class="box" type="email" placeholder="Email">
+     </div>
+        <div class="email-div">
+            <img src="lock-icon.webp">
+            <input class="box" type="password" placeholder="Password">
+        </div>
+        <input class="box2" type="password" placeholder="Confirm Password">
+         <button class="register-button">Sign up</button>
+        <p class="account">Already have an account? <a href="">Login</a></p>
+    </div>
+
+    <script>
+      let login = document.querySelector('.login-div')
+      let register = document.querySelector('.register-div')
+
+      function show(){
+        login.classList.add('active')
+        register.classList.remove('active')
+      }
+
+       function togglePassword() {
+    const password = document.querySelector(".password-box");
+    if (password.type === "password") {
+        password.type = "text";
+    } else {
+        password.type = "password";
+    }
+}
+    </script>
+
+  </body>
+</html>
